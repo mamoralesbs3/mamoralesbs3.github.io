@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miguel Morales | Backend Developer</title>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111c36;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0b1224, #0f172a);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 40px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    header p {
+      color: var(--text);
+      max-width: 750px;
+    }
+
+    .tags {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Miguel Ángel Morales Leal</h1>
+      <h2>Software Engineer | Backend Developer (.NET / SQL Server)</h2>
+
+      <p>
+        Software engineer passionate about system architecture and API development.
+        With more than <strong>4 years of experience in .NET and SQL Server</strong>, I specialize in building
+        the technical core of enterprise applications. I have a problem-solver mindset,
+        which allows me to move between backend and frontend with ease.
+      </p>
+
+      <div class="tags">
+        <div class="tag">C#</div>
+        <div class="tag">.NET Framework</div>
+        <div class="tag">.NET Core</div>
+        <div class="tag">SQL Server</div>
+        <div class="tag">REST APIs</div>
+        <div class="tag">Entity Framework</div>
+        <div class="tag">Scrum</div>
+      </div>
+
+      <div class="buttons">
+        <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/miguel-angel-morales-leal-1a07132a6/" target="_blank">LinkedIn</a>
+        <a class="btn" href="mailto:mamoralesbs3@gmail.com">Email</a>
+      </div>
+    </header>
+
+    <section>
+      <h2 style="margin-bottom: 12px;">About Me</h2>
+      <div class="card">
+        <p>
+          I am a developer focused on backend, specialized in building services, APIs, and business logic
+          for enterprise systems. I enjoy working with architecture, query optimization, and scalable solutions.
+        </p>
+        <p>
+          I am constantly improving my technical and language skills to face global challenges.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom: 12px;">Technical Skills</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>Backend / APIs</h3>
+          <p>
+            C# • .NET Framework • .NET Core • Web API • REST • JSON • Web Services
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Databases</h3>
+          <p>
+            SQL Server (SSMS) • MySQL • MongoDB (NoSQL) • Entity Framework
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Tools</h3>
+          <p>
+            Git • TFS (Team Foundation Server) • Postman • Swagger (OpenAPI) • Trello • Asana
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Frontend / Other</h3>
+          <p>
+            JavaScript (ES6+) • TypeScript • HTML5 • CSS3 • Java • PHP • Python (Flask)
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom: 12px;">Experience</h2>
+
+      <div class="card">
+        <h3>Developer Analyst - Sistemas Citisalud SAS</h3>
+        <p><strong>Bogotá D.C. | Jan 2020 - 2024</strong></p>
+
+        <p>
+          Active participation in the design, development, and maintenance of the ERP software TOPRA,
+          focused on managing information for healthcare service institutions.
+        </p>
+
+        <p>
+          Responsible for implementing business logic and developing web modules and integrated services
+          using .NET Framework and .NET Core, with SQL Server as the database.
+        </p>
+
+        <p>
+          ✔ Development of microservices in .NET Core to optimize interoperability between modules.<br>
+          ✔ Implementation of integrations with national systems through REST APIs.<br>
+          ✔ Maintenance of web forms and performance improvements for SQL queries.<br>
+          ✔ Agile work under Scrum methodology and version control using Team Foundation Services.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom: 12px;">Education</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Software Engineering</h3>
+          <p>Politécnico Grancolombiano (Bogotá D.C.)</p>
+          <p><strong>2024</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Technologist in Systems Analysis and Development</h3>
+          <p>SENA - National Learning Service</p>
+          <p><strong>2021</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!--<section>
+      <h2 style="margin-bottom: 12px;">Projects</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>Project 1</h3>
+          <p>.NET API or backend system (replace this text with your real project).</p>
+          <a href="#" target="_blank">View repository →</a>
+        </div>
+
+        <div class="card">
+          <h3>Project 2</h3>
+          <p>CRUD application with SQL Server and authentication (replace this text).</p>
+          <a href="#" target="_blank">View repository →</a>
+        </div>
+
+        <div class="card">
+          <h3>Project 3</h3>
+          <p>.NET Core microservice or automation tool (replace this text).</p>
+          <a href="#" target="_blank">View repository →</a>
+        </div>
+
+      </div>
+    </section>-->
+
+    <section>
+      <h2 style="margin-bottom: 12px;">Contact</h2>
+      <div class="card">
+        <p>📍 Bogotá D.C., Colombia</p>
+        <p>📞 +57 313 241 9075</p>
+        <p>📧 <a href="mailto:mamoralesbs3@gmail.com">mamoralesbs3@gmail.com</a></p>
+        <p>💼 <a href="https://www.linkedin.com/in/miguel-angel-morales-leal-1a07132a6/" target="_blank">LinkedIn</a></p>
+      </div>
+    </section>
+
+    <footer>
+      Portfolio built with <span>HTML</span> + <span>CSS</span> | Hosted on GitHub Pages
+    </footer>
+
+  </div>
+</body>
+</html>
