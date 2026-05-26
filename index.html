@@ -2,323 +2,907 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miguel Morales | Backend Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miguel Morales | Backend Engineer</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111c36;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: rgba(255, 255, 255, 0.08);
+
+    :root{
+      --bg:#0b1120;
+      --bg-secondary:#111827;
+      --card:#131c31;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --primary:#38bdf8;
+      --primary-soft:rgba(56,189,248,.12);
+      --border:rgba(255,255,255,.08);
+      --success:#22c55e;
+      --purple:#8b5cf6;
+      --orange:#f59e0b;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: linear-gradient(180deg, #0b1224, #0f172a);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 30px 15px;
+    html{
+      scroll-behavior:smooth;
     }
 
-    .container {
-      max-width: 950px;
-      margin: 0 auto;
+    body{
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(139,92,246,.08), transparent 30%),
+        linear-gradient(180deg,#07111f,#0b1120);
+      color:var(--text);
+      line-height:1.7;
+      padding:40px 20px;
     }
 
-    header {
-      margin-bottom: 40px;
-      padding: 25px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      backdrop-filter: blur(8px);
+    .container{
+      max-width:1100px;
+      margin:auto;
     }
 
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+    section{
+      margin-bottom:80px;
     }
 
-    header h2 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 15px;
+    .section-title{
+      font-size:1.8rem;
+      margin-bottom:24px;
+      font-weight:800;
+      letter-spacing:-1px;
     }
 
-    header p {
-      color: var(--text);
-      max-width: 750px;
+    .section-subtitle{
+      color:var(--muted);
+      margin-bottom:35px;
+      max-width:700px;
     }
 
-    .tags {
-      margin-top: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    /* HERO */
+
+    .hero{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:50px;
+      position:relative;
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 30px rgba(56,189,248,.05);
     }
 
-    .tag {
-      font-size: 0.85rem;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: var(--accent);
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(56,189,248,.08);
+      border-radius:50%;
+      top:-200px;
+      right:-100px;
+      filter:blur(80px);
     }
 
-    section {
-      margin-bottom: 30px;
+    .hero h1{
+      font-size:3.2rem;
+      line-height:1.1;
+      margin-bottom:14px;
+      font-weight:800;
+      letter-spacing:-2px;
+      position:relative;
+      z-index:2;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
+    .hero h2{
+      font-size:1.2rem;
+      color:var(--primary);
+      margin-bottom:24px;
+      font-weight:600;
+      position:relative;
+      z-index:2;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-      transition: 0.2s ease;
+    .hero p{
+      max-width:760px;
+      color:#cbd5e1;
+      font-size:1.05rem;
+      position:relative;
+      z-index:2;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(56, 189, 248, 0.35);
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:32px;
+      position:relative;
+      z-index:2;
     }
 
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
+    .btn{
+      padding:12px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      transition:.25s ease;
+      border:1px solid transparent;
     }
 
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 12px;
+    .btn-primary{
+      background:linear-gradient(135deg,#0ea5e9,#38bdf8);
+      box-shadow:0 0 20px rgba(56,189,248,.25);
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
+    .btn-primary:hover{
+      transform:translateY(-2px);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .btn-secondary{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
     }
 
-    .buttons {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .btn-secondary:hover{
+      border-color:rgba(56,189,248,.35);
+      background:rgba(56,189,248,.08);
     }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--text);
-      font-weight: 600;
-      transition: 0.2s ease;
+    /* METRICS */
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:18px;
+      margin-top:35px;
     }
 
-    .btn:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      background: rgba(56, 189, 248, 0.1);
+    .metric-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      padding:22px;
+      border-radius:18px;
     }
 
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
+    .metric-card h3{
+      font-size:2rem;
+      color:var(--primary);
+      margin-bottom:6px;
     }
 
-    footer span {
-      color: var(--accent);
-      font-weight: 600;
+    .metric-card p{
+      color:var(--muted);
+      font-size:.95rem;
     }
+
+    /* GRID */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:28px;
+      transition:.25s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(56,189,248,.3);
+      box-shadow:0 0 20px rgba(56,189,248,.08);
+    }
+
+    .card h3{
+      margin-bottom:16px;
+      font-size:1.15rem;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    /* STACK */
+
+    .stack-category{
+      margin-bottom:20px;
+    }
+
+    .stack-category h3{
+      margin-bottom:14px;
+      color:white;
+      font-size:1rem;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .badge{
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:.9rem;
+      font-weight:600;
+      border:1px solid rgba(56,189,248,.2);
+      background:rgba(56,189,248,.08);
+      color:#7dd3fc;
+    }
+
+    /* EXPERIENCE */
+
+    .experience{
+      padding:35px;
+    }
+
+    .experience h3{
+      font-size:1.4rem;
+      margin-bottom:10px;
+    }
+
+    .experience .company{
+      color:var(--primary);
+      font-weight:600;
+      margin-bottom:22px;
+      display:block;
+    }
+
+    .experience ul{
+      margin-top:18px;
+      padding-left:20px;
+      color:#cbd5e1;
+    }
+
+    .experience li{
+      margin-bottom:10px;
+    }
+
+    /* ARCHITECTURE */
+
+    .architecture{
+      background:linear-gradient(
+        135deg,
+        rgba(56,189,248,.08),
+        rgba(139,92,246,.08)
+      );
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:40px;
+      text-align:center;
+    }
+
+    .arch-flow{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      margin-top:30px;
+    }
+
+    .arch-box{
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--border);
+      padding:18px 24px;
+      border-radius:18px;
+      min-width:180px;
+      font-weight:600;
+    }
+
+    .arrow{
+      color:var(--primary);
+      font-size:1.5rem;
+      font-weight:700;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+      padding:50px;
+      background:rgba(255,255,255,.03);
+      border-radius:28px;
+      border:1px solid var(--border);
+    }
+
+    .contact p{
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    .contact-links{
+      margin-top:28px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    footer{
+      margin-top:60px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    footer span{
+      color:var(--primary);
+      font-weight:600;
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        padding:35px 25px;
+      }
+
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .section-title{
+        font-size:1.5rem;
+      }
+
+      .architecture{
+        padding:25px;
+      }
+
+      .arch-flow{
+        flex-direction:column;
+      }
+
+      .arrow{
+        transform:rotate(90deg);
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
+
   <div class="container">
 
-    <header>
+    <!-- HERO -->
+
+    <section class="hero">
+
       <h1>Miguel Angel Morales Leal</h1>
-      <h2>Software Engineer | Backend Developer (.NET / SQL Server)</h2>
+
+      <h2>
+        Backend Engineer specialized in .NET APIs, SQL Server and Enterprise Systems
+      </h2>
 
       <p>
-        Software engineer passionate about system architecture and API development.
-        With more than <strong>4 years of experience in .NET and SQL Server</strong>, I specialize in building
-        the technical core of enterprise applications. I have a problem-solver mindset,
-        which allows me to move between backend and frontend with ease.
+        Backend developer with 4+ years of experience building enterprise
+        solutions using .NET and SQL Server.
+        Focused on API development, database optimization, integrations,
+        and scalable architectures for healthcare systems.
       </p>
 
-      <div class="tags">
-        <div class="tag">C#</div>
-        <div class="tag">.NET Framework</div>
-        <div class="tag">.NET Core</div>
-        <div class="tag">SQL Server</div>
-        <div class="tag">REST APIs</div>
-        <div class="tag">Entity Framework</div>
-        <div class="tag">Scrum</div>
+      <div class="hero-buttons">
+
+        <a
+          href="https://github.com/"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/miguel-angel-morales-leal-1a07132a6/"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="mailto:mamoralesbs3@gmail.com"
+          class="btn btn-secondary"
+        >
+          Contact Me
+        </a>
+
       </div>
 
-      <div class="buttons">
-        <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/miguel-angel-morales-leal-1a07132a6/" target="_blank">LinkedIn</a>
-        <a class="btn" href="mailto:mamoralesbs3@gmail.com">Email</a>
-      </div>
-    </header>
+      <!-- METRICS -->
 
-    <section>
-      <h2 style="margin-bottom: 12px;">About Me</h2>
-      <div class="card">
-        <p>
-          I am a developer focused on backend, specialized in building services, APIs, and business logic
-          for enterprise systems. I enjoy working with architecture, query optimization, and scalable solutions.
-        </p>
-        <p>
-          I am constantly improving my technical and language skills to face global challenges.
-        </p>
+      <div class="metrics">
+
+        <div class="metric-card">
+          <h3>4+</h3>
+          <p>Years building enterprise software</p>
+        </div>
+
+        <div class="metric-card">
+          <h3>.NET</h3>
+          <p>Backend and API specialization</p>
+        </div>
+
+        <div class="metric-card">
+          <h3>ERP</h3>
+          <p>Healthcare systems experience</p>
+        </div>
+
+        <div class="metric-card">
+          <h3>SQL</h3>
+          <p>Optimization and performance tuning</p>
+        </div>
+
       </div>
+
     </section>
 
+    <!-- ABOUT -->
+
     <section>
-      <h2 style="margin-bottom: 12px;">Technical Skills</h2>
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="card">
+
+        <p>
+          I specialize in backend development and enterprise applications,
+          building APIs, integrations, business logic and scalable systems
+          using the Microsoft ecosystem.
+        </p>
+
+        <br>
+
+        <p>
+          My experience includes healthcare ERP systems, REST integrations,
+          microservices, SQL optimization, and clean architecture practices.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- WHAT I BUILD -->
+
+    <section>
+
+      <h2 class="section-title">What I Build</h2>
+
+      <p class="section-subtitle">
+        Focused on enterprise backend solutions, integrations and scalable architectures.
+      </p>
+
       <div class="grid">
 
         <div class="card">
-          <h3>Backend / APIs</h3>
+          <h3>Enterprise APIs</h3>
+
           <p>
-            C# • .NET Framework • .NET Core • Web API • REST • JSON • Web Services
+            Development of scalable REST APIs using .NET Core and SQL Server
+            for enterprise environments.
           </p>
         </div>
 
         <div class="card">
-          <h3>Databases</h3>
+          <h3>ERP Integrations</h3>
+
           <p>
-            SQL Server (SSMS) • MySQL • MongoDB (NoSQL) • Entity Framework
+            Integration of healthcare systems with external services
+            and national platforms through REST APIs.
           </p>
         </div>
 
         <div class="card">
-          <h3>Tools</h3>
+          <h3>Database Optimization</h3>
+
           <p>
-            Git • TFS (Team Foundation Server) • Postman • Swagger (OpenAPI) • Trello • Asana
+            Query optimization, stored procedures, indexing strategies
+            and SQL performance improvements.
           </p>
         </div>
 
         <div class="card">
-          <h3>Frontend / Other</h3>
+          <h3>Microservices</h3>
+
           <p>
-            JavaScript (ES6+) • TypeScript • HTML5 • CSS3 • Java • PHP • Python (Flask)
+            Design and implementation of modular services
+            using .NET Core and clean architecture principles.
           </p>
         </div>
 
       </div>
+
     </section>
 
+    <!-- TECH STACK -->
+
+    <!-- ========================================= -->
+	<!-- TECH ECOSYSTEM -->
+	<!-- ========================================= -->
+
+	<section>
+
+	  <h2 class="section-title">Tech Ecosystem</h2>
+
+	  <p class="section-subtitle">
+		Backend-focused engineering profile with enterprise experience in .NET ecosystems,
+		scalable architectures and multi-stack development exposure.
+	  </p>
+
+	  <div class="grid">
+
+		<!-- CORE BACKEND -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Core Backend Engineering</h3>
+
+			<div class="badges">
+			  <span class="badge">C#</span>
+			  <span class="badge">.NET Framework</span>
+			  <span class="badge">.NET Core</span>
+			  <span class="badge">ASP.NET Web API</span>
+			  <span class="badge">REST APIs</span>
+			  <span class="badge">Entity Framework</span>
+			  <span class="badge">JSON</span>
+			  <span class="badge">Web Services</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- ARCHITECTURE -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Architecture & Enterprise Design</h3>
+
+			<div class="badges">
+			  <span class="badge">Microservices</span>
+			  <span class="badge">Clean Architecture</span>
+			  <span class="badge">SOLID Principles</span>
+			  <span class="badge">Layered Architecture</span>
+			  <span class="badge">Scalable Systems</span>
+			  <span class="badge">ERP Integrations</span>
+			  <span class="badge">Business Logic Design</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- DATABASES -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Database Engineering</h3>
+
+			<div class="badges">
+			  <span class="badge">SQL Server</span>
+			  <span class="badge">SSMS</span>
+			  <span class="badge">MySQL</span>
+			  <span class="badge">PostgreSQL</span>
+			  <span class="badge">MariaDB</span>
+			  <span class="badge">SQLite</span>
+			  <span class="badge">MongoDB</span>
+			  <span class="badge">Query Optimization</span>
+			  <span class="badge">Stored Procedures</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- JAVASCRIPT ECOSYSTEM -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>JavaScript & Frontend Ecosystem</h3>
+
+			<div class="badges">
+			  <span class="badge">JavaScript</span>
+			  <span class="badge">TypeScript</span>
+			  <span class="badge">Angular</span>
+			  <span class="badge">React</span>
+			  <span class="badge">Vue.js</span>
+			  <span class="badge">Next.js</span>
+			  <span class="badge">HTML5</span>
+			  <span class="badge">CSS3</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- NODE ECOSYSTEM -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Node.js Ecosystem & API Frameworks</h3>
+
+			<div class="badges">
+			  <span class="badge">Node.js</span>
+			  <span class="badge">Express.js</span>
+			  <span class="badge">NestJS</span>
+			  <span class="badge">API Development</span>
+			  <span class="badge">Server-side JavaScript</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- MULTI-LANGUAGE -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Multi-Language Development Experience</h3>
+
+			<div class="badges">
+			  <span class="badge">Java</span>
+			  <span class="badge">Python</span>
+			  <span class="badge">PHP</span>
+			  <span class="badge">C</span>
+			  <span class="badge">C++</span>
+			  <span class="badge">Rust</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- PYTHON / PHP -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Python & PHP Framework Exposure</h3>
+
+			<div class="badges">
+			  <span class="badge">Flask</span>
+			  <span class="badge">Django</span>
+			  <span class="badge">Laravel</span>
+			  <span class="badge">Backend Services</span>
+			  <span class="badge">MVC Architecture</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+		<!-- DEV TOOLS -->
+
+		<div class="card">
+
+		  <div class="stack-category">
+
+			<h3>Development Workflow & Tooling</h3>
+
+			<div class="badges">
+			  <span class="badge">Git</span>
+			  <span class="badge">TFS</span>
+			  <span class="badge">Postman</span>
+			  <span class="badge">Swagger</span>
+			  <span class="badge">OpenAPI</span>
+			  <span class="badge">Scrum</span>
+			  <span class="badge">Agile Development</span>
+			  <span class="badge">VS Code</span>
+			  <span class="badge">Visual Studio</span>
+			  <span class="badge">PyCharm</span>
+			  <span class="badge">IntelliJ IDEA</span>
+			</div>
+
+		  </div>
+
+		</div>
+
+	  </div>
+
+	</section>
+
+    <!-- EXPERIENCE -->
+
     <section>
-      <h2 style="margin-bottom: 12px;">Experience</h2>
 
-      <div class="card">
-        <h3>Developer Analyst - Sistemas Citisalud SAS</h3>
-        <p><strong>Bogotá D.C. | Jan 2020 - 2024</strong></p>
+      <h2 class="section-title">Professional Experience</h2>
 
-        <p>
-          Active participation in the design, development, and maintenance of the ERP software TOPRA,
-          focused on managing information for healthcare service institutions.
-        </p>
+      <div class="card experience">
 
-        <p>
-          Responsible for implementing business logic and developing web modules and integrated services
-          using .NET Framework and .NET Core, with SQL Server as the database.
-        </p>
+        <h3>Developer Analyst</h3>
+
+        <span class="company">
+          Sistemas Citisalud SAS | Bogotá D.C. | 2020 - 2024
+        </span>
 
         <p>
-          ✔ Development of microservices in .NET Core to optimize interoperability between modules.<br>
-          ✔ Implementation of integrations with national systems through REST APIs.<br>
-          ✔ Maintenance of web forms and performance improvements for SQL queries.<br>
-          ✔ Agile work under Scrum methodology and version control using Team Foundation Services.
+          Active participation in the development and maintenance
+          of TOPRA ERP, focused on healthcare institutions management.
         </p>
+
+        <ul>
+
+          <li>
+            Development of microservices in .NET Core
+            to improve interoperability between modules.
+          </li>
+
+          <li>
+            Implementation of REST API integrations
+            with national healthcare systems.
+          </li>
+
+          <li>
+            SQL Server optimization and maintenance
+            for enterprise-scale operations.
+          </li>
+
+          <li>
+            Agile development under Scrum methodology
+            using Team Foundation Server.
+          </li>
+
+        </ul>
+
       </div>
+
     </section>
 
+    <!-- ARCHITECTURE -->
+
     <section>
-      <h2 style="margin-bottom: 12px;">Education</h2>
+
+      <h2 class="section-title">Architecture Approach</h2>
+
+      <div class="architecture">
+
+        <p>
+          Typical backend architecture used in enterprise systems and integrations.
+        </p>
+
+        <div class="arch-flow">
+
+          <div class="arch-box">
+            Frontend / Client
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="arch-box">
+            ASP.NET Core API
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="arch-box">
+            Business Logic Layer
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="arch-box">
+            SQL Server
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section>
+
+      <h2 class="section-title">Education</h2>
 
       <div class="grid">
+
         <div class="card">
+
           <h3>Software Engineering</h3>
-          <p>Politécnico Grancolombiano (Bogotá D.C.)</p>
+
+          <p>
+            Politécnico Grancolombiano
+          </p>
+
+          <br>
+
           <p><strong>2024</strong></p>
+
         </div>
 
         <div class="card">
+
           <h3>Technologist in Systems Analysis and Development</h3>
-          <p>SENA - National Learning Service</p>
+
+          <p>
+            SENA - National Learning Service
+          </p>
+
+          <br>
+
           <p><strong>2021</strong></p>
+
         </div>
+
       </div>
+
     </section>
 
-    <!--<section>
-      <h2 style="margin-bottom: 12px;">Projects</h2>
-      <div class="grid">
+    <!-- CONTACT -->
 
-        <div class="card">
-          <h3>Project 1</h3>
-          <p>.NET API or backend system (replace this text with your real project).</p>
-          <a href="#" target="_blank">View repository →</a>
-        </div>
+    <section class="contact">
 
-        <div class="card">
-          <h3>Project 2</h3>
-          <p>CRUD application with SQL Server and authentication (replace this text).</p>
-          <a href="#" target="_blank">View repository →</a>
-        </div>
+      <h2 class="section-title">Let's Build Something Great</h2>
 
-        <div class="card">
-          <h3>Project 3</h3>
-          <p>.NET Core microservice or automation tool (replace this text).</p>
-          <a href="#" target="_blank">View repository →</a>
-        </div>
+      <p>
+        Open to backend engineering opportunities,
+        enterprise software projects and API development roles.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          href="mailto:mamoralesbs3@gmail.com"
+          class="btn btn-primary"
+        >
+          Email
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/miguel-angel-morales-leal-1a07132a6/"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
 
       </div>
-    </section>-->
 
-    <section>
-      <h2 style="margin-bottom: 12px;">Contact</h2>
-      <div class="card">
-        <p>📍 Bogotá D.C., Colombia</p>
-        <p>📞 +57 313 241 9075</p>
-        <p>📧 <a href="mailto:mamoralesbs3@gmail.com">mamoralesbs3@gmail.com</a></p>
-        <p>💼 <a href="https://www.linkedin.com/in/miguel-angel-morales-leal-1a07132a6/" target="_blank">LinkedIn</a></p>
-      </div>
     </section>
 
     <footer>
-      Portfolio built with <span>HTML</span> + <span>CSS</span> | Hosted on GitHub Pages
+      Built with <span>HTML</span> + <span>CSS</span> | Hosted on GitHub Pages
     </footer>
 
   </div>
+
 </body>
 </html>
